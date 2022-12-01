@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -71,7 +71,11 @@ namespace ATM_Machine
             Console.WriteLine("4. Exit.");
             Console.WriteLine("\n");
         }
-
+        public static void userBalance(CardHolder currentUser)
+        {
+            currentUser.setBalance(currentUser.getBalance());
+            Console.WriteLine("Your account Balance is: " + currentUser.getBalance());
+        }
         public static void deposit(CardHolder currentUser)
         {
             Console.WriteLine("Please Enter the amount of $$ you want to deposit: ");
@@ -90,31 +94,26 @@ namespace ATM_Machine
             }
             else
             {
-                Console.WriteLine("Thank You for withdrawing, your new balance is: " + (currentUser.getBalance() - Withdrawl));
+                currentUser.setBalance(currentUser.getBalance() - Withdrawl);
+                Console.WriteLine("Thank You for withdrawing, your new balance is: " + (currentUser.getBalance()));
             }
         }
-
-        public static void userBalance(CardHolder currentUser)
-        {
-            Console.WriteLine("Your account Balance is: " + currentUser.getBalance());
-        }
-
         public static void Main(string[] args)
         {
 
             List<CardHolder> cardHolders = new List<CardHolder>();
-            cardHolders.Add(new CardHolder("4929181116658913", 1234, "Wasif", "Nazir",800.23));
-            cardHolders.Add(new CardHolder("4532304478499358", 6754, "Muhammad", "Mudassir", 900.46));
-            cardHolders.Add(new CardHolder("4716724955122793", 0897, "Muhammad", "Osama",  1200.78));
-            cardHolders.Add(new CardHolder("4556542661920687", 5546, "Muhammad", "Arsalan", 1000.23));
-            cardHolders.Add(new CardHolder("4485079125525824", 3320, "Muhammad", "Hammad", 600.76));
+            cardHolders.Add(new CardHolder("4649519939040133", 1234, "Wasif", "Nazir", 800.23));
+            cardHolders.Add(new CardHolder("4532304478499358", 4649, "Muhammad", "Mudassir", 900.46));
+            cardHolders.Add(new CardHolder("4716724955122793", 0133, "Muhammad", "Osama", 1200.78));
+            cardHolders.Add(new CardHolder("4556542661920687", 5199, "Muhammad", "Arsalan", 1000.23));
+            cardHolders.Add(new CardHolder("4485079125525824", 3904, "Muhammad", "Hammad", 600.76));
 
             Console.WriteLine("Welcome to Simple_ATM");
             //Console.WriteLine("\n");
             Console.WriteLine("Please enter your debit Card Number");
             //Console.WriteLine("\n");
-            CardHolder currentUser;
             string debitCardNum = "";
+            CardHolder currentUser;
 
             while (true)
             {
@@ -176,9 +175,19 @@ namespace ATM_Machine
 
             }
 
+
+
+
+
+
+
+
+
+
+
         }
-    }
 
     }
+}
 
 

@@ -41,7 +41,7 @@ jobs:
           
           file_list = "\n".join(structure[:100]) # Limit to 100 files max for context
 
-          prompt = f"Act as a professional technical writer. Generate a comprehensive, beautiful, and well-formatted README.md markdown file for a repository that contains the following files:\n\n{file_list}\n\nInclude sections: Project Title, Description, Tech Stack (deduced from files like .csproj or package.json), Installation, and Features. Please check and update the readme carefully, this is the simple console application and you have write in the readme clean architecture and the things that are not in there, Please go through the files properly and only put that content that is in the file"
+          prompt = f"Act as a professional technical writer. Generate a comprehensive, beautiful, and well-formatted README.md markdown file for a repository that contains the following files:\n\n{file_list}\n\nInclude sections: Project Title, Description, Tech Stack (deduced from files like .csproj or package.json), Installation, and Features. Please check and update the readme carefully, this is the simple console application and you have write in the readme clean architecture and the things that are not in there, Please go through the files properly and only put that content that is in the file. my github URL is: https://github.com/wasif4469 and Linkedin URL is: https://www.linkedin.com/in/muhammad-wasif-nazir/. You can Update in the Author section."
 
           url = "https://openrouter.ai/api/v1/chat/completions"
           
